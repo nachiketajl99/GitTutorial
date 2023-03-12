@@ -1,0 +1,146 @@
+=========================================
+|| Git is version control system (VCS) ||
+=========================================
+
+### First commands on git-bash :
+--> git config --global user.name "username"
+--> git config --global user.email "email"
+================================================================================================
+CLONE ::
+### Cloning of remote repository in normal folder is one time activity for creating local repo :
+--> git clone <url> 
+*** (main) branch generated after cloning remote repo in local repo.
+================================================================================================
+INIT ::
+### Create local repository from normal folder :
+--> git init
+*** (master) branch generated after connecting local & remote repo.
+------------------------------------------------------------------------------------------------
+CREATE CONNECTION ::
+### When we create local repo by normal folder, then connection is needed between local repo & 
+    remote repo, to create connection between local repo & remote repo :
+--> git remote add origin URL
+================================================================================================
+CREATE FILE ::
+### Create file on local repo through Git Bash :
+--> touch filename 
+e.g.touch test.py
+================================================================================================
+STATUS ::
+### Check status of local repo :
+--> git status
+    Red : Working area | Green : Staging area
+------------------------------------------------------------------------------------------------
+LIST ::
+### shows List of present files in local repo
+--> ls
+e.g.test.py  text.txt  photo.jpg
+================================================================================================
+ADD FILE ::
+### From working area to staging area :
+--> git add filename
+--> git add filename1 filename2 filenameN
+--> git add .
+------------------------------------------------------------------------------------------------
+RESTORE ::
+### Restore file from staging area @ working area :
+--> git restore --staged filename
+================================================================================================
+COMMIT ::
+### From stagging area to local repo :
+--> git commit -m "message"
+------------------------------------------------------------------------------------------------
+PUSH ::
+### Files from local repo to remote repo :
+--> git push origin HEAD
+------------------------------------------------------------------------------------------------
+### To push files from local repo to any branch :
+--> git push origin branchname
+e.g.git push origin frontenddev
+================================================================================================
+PULL ::
+### From remote repo to local repo :
+--> git pull
+--> git pull origin branch name
+e.g.git pull origin frontenddev
+------------------------------------------------------------------------------------------------
+FETCH ::
+### Fetch recent updates of files from remote repo, but unable to show changes in local repo :
+--> git fetch
+*** git fetch  vs  git pull ---->imp
+git fetch --> fetch recent updates in files of remote repo, unable to show changes in local repo
+git pull --> fetch recent updates from remote repo, shows changes in local repo like new files
+------------------------------------------------------------------------------------------------
+** Interview**
+Q.from remote repo to local repo
+--> git clone & git pull & git fetch
+
+Q.Difference between git clone and git pull
+--> git clone is one time activity, used to clone everything of remote repo in local repo.
+--> git pull used to update regular changes from remote repo to local repo.
+================================================================================================
+CREATE BRANCH ::
+### To create new branch from local repo :
+--> git branch branchname
+e.g. git branch frontenddev
+*** when new branch is craeated always code of existing branch get copied in new branch.
+------------------------------------------------------------------------------------------------
+CHECK BRANCHES ::
+### To check the pointer
+--> git branch
+e.g. $ git branch
+       backend
+     * frontend
+       frontenddev
+       master/main
+================================================================================================
+CHECKOUT ::
+### Switching between branches like from master to backend :
+--> git checkout branchname
+e.g. git checkout backend
+------------------------------------------------------------------------------------------------
+### Undo changes inside files / Revert the changes in original state of file :
+--> git checkout filename
+e.g. git checkout test.py
+================================================================================================
+MERGE ::
+### To merge branches
+e.g. git checkout master/main + Git merge frontenddev + git push origin head
+================================================================================================
+LOG ::
+Git log --> shows logs of remote repo.
+------------------------------------------------------------------------------------------------
+DIFF ::
+Git diff --> to spacify difference between original file & modified file.
+================================================================================================
+RESET ::
+### Revert changes from staging area to working directory :
+--> git reset
+------------------------------------------------------------------------------------------------
+RESET ::
+### Revert changes from local repo to stagging area :
+--> git reset --soft HEAD~1 
+------------------------------------------------------------------------------------------------
+RESEt ::
+### Revert all the changes from local repo to working area --> original state :
+--> git reset --hard HEAD~1 
+================================================================================================
+REBASE ::
+Rebase is different than merging, used to avoid conflict or overlaping of old versions of existing branches.
+-->Git rebase secondary branchname
+-->Git checkout main/master + Git rebase feature + Git push origin feature 
+
+================================================================================================
+
+git config --global credential.helper cache
+git config --global --unset credential.helper
+================================================================================================
+git Hub ::
+PR --> pull request is a permission,unless manager approve changes not merged on main branch 
+Collabration --> used to add people in perticular repo @ git hub
+SSH key --> used to give access of complete account to any email id @ git hub
+=================================================================================================
+unix commands :
+cat filename  concatinate output on console
+vi/vim filename  editor, insert  I, esc :wq   to return on console
+
